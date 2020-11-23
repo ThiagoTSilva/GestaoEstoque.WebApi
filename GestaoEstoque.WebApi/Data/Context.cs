@@ -1,4 +1,5 @@
 ﻿using GestaoEstoque.WebApi.Models;
+using GestaoEstoque.WebApi.Models.Mapping;
 using Microsoft.EntityFrameworkCore;
 
 namespace GestaoEstoque.WebApi.Data

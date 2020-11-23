@@ -8,7 +8,7 @@ namespace GestaoEstoque.WebApi.Repositories.Interface
     public interface IBaseRepository<T> where T : class
     {
         T Find(int id);
-        IQueryable<T> List();
+        IQueryable<T> FindAll();
         void Add(T item);
         void Delete(T item);
         void Edit(T item);

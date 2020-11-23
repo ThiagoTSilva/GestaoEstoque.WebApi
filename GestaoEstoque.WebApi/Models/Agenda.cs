@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace GestaoEstoque.WebApi.Models
+﻿namespace GestaoEstoque.WebApi.Models
 {
     public class Agenda
     {
@@ -14,6 +9,7 @@ namespace GestaoEstoque.WebApi.Models
         public string HrInicial { get; set; }
         public string HrFinal { get; set; }
         public string Placa { get; set; }
+        public int Vaga { get; set; }
         public Fornecedor Fornecedor { get; set; }
     }
 }

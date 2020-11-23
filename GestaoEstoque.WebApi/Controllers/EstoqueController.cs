@@ -1,11 +1,6 @@
 ﻿using GestaoEstoque.WebApi.Models;
 using GestaoEstoque.WebApi.Service.Interface;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Abstractions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace GestaoEstoque.WebApi.Controllers
 {
@@ -21,10 +16,10 @@ namespace GestaoEstoque.WebApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post()
+        public IActionResult Post(Agenda agenda)
         {
-            _service.AgendarHorario();
-            return Ok();
+            return Ok(_service.AgendarHorario(agenda));
         }
+
     }
 }

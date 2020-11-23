@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace GestaoEstoque.WebApi.Service.Interface
 {
-    public interface IEstoqueService
+    public interface IUsuarioService
     {
-        IEnumerable<Task<Agenda>> AgendarHorario(Agenda agenda);
+        void CadastrarUsuario(Usuario usuario);
+        Usuario UsuarioValido(int id, int senha);
     }
 }

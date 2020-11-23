@@ -47,11 +47,14 @@ namespace GestaoEstoque.WebApi.Migrations
                     b.Property<string>("Status")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Vaga")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("FornecedorId");
 
-                    b.ToTable("Agendas");
+                    b.ToTable("Agenda");
                 });
 
             modelBuilder.Entity("GestaoEstoque.WebApi.Models.Fornecedor", b =>
@@ -66,7 +69,7 @@ namespace GestaoEstoque.WebApi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Fornecedores");
+                    b.ToTable("Fornecedor");
                 });
 
             modelBuilder.Entity("GestaoEstoque.WebApi.Models.Usuario", b =>
@@ -82,6 +85,9 @@ namespace GestaoEstoque.WebApi.Migrations
                     b.Property<DateTime>("DhCadastro")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Nome")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Senha")
                         .HasColumnType("nvarchar(max)");
 
@@ -90,7 +96,7 @@ namespace GestaoEstoque.WebApi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Usuarios");
+                    b.ToTable("Usuario");
                 });
 
             modelBuilder.Entity("GestaoEstoque.WebApi.Models.Agenda", b =>

@@ -16,12 +16,12 @@ namespace GestaoEstoque.WebApi.Service
             _estoqueRepository = estoqueRepository;
         }
 
-        public IEnumerable<Task<Agenda>> AgendarHorario()
+        public IEnumerable<Task<Agenda>> AgendarHorario(Agenda agenda)
         {
-            var agendamento = new Agenda();
-            _estoqueRepository.Save(agendamento);
 
-            return (IEnumerable<Task<Agenda>>)agendamento;
+            _estoqueRepository.Save(agenda);
+
+            return (IEnumerable<Task<Agenda>>)agenda;
         }
     }
 }

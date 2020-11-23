@@ -6,12 +6,10 @@ using System.Linq;
 
 namespace GestaoEstoque.WebApi.Repositories
 {
-    public class BaseRepository<T>
-    : IDisposable, IBaseRepository<T> where T : class
+    public class BaseRepository<T> : IDisposable, IBaseRepository<T> where T : class
     {
         private Context _context;
 
-        #region Ctor
         public BaseRepository(Context context)
         {
             if (context == null)
@@ -19,14 +17,13 @@ namespace GestaoEstoque.WebApi.Repositories
 
             _context = context;
         }
-        #endregion
 
         public T Find(int id)
         {
             return _context.Set<T>().Find(id);
         }
 
-        public IQueryable<T> List()
+        public IQueryable<T> FindAll()
         {
             return _context.Set<T>();
         }
