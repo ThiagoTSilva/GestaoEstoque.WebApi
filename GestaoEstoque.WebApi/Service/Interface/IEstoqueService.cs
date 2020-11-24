@@ -8,6 +8,6 @@ namespace GestaoEstoque.WebApi.Service.Interface
 {
     public interface IEstoqueService
     {
-        IEnumerable<Task<Agenda>> AgendarHorario(Agenda agenda);
+        IEnumerable<Agenda> AgendarHorario(Agenda agenda);
     }
 }

@@ -22,8 +22,8 @@ namespace GestaoEstoque.WebApi.Controllers
             return Ok();
         }
 
-        [HttpGet("~/Api/Usuario/{id}/{senha}")]
-        public IActionResult UsuarioValido(int id, int senha) 
+        [HttpGet("~/api/usuario/{id}/{senha}")]
+        public IActionResult UsuarioValido(int id, string senha) 
         {
             return Ok(_service.UsuarioValido(id, senha));
         }

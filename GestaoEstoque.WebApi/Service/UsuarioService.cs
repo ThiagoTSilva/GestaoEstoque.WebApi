@@ -21,7 +21,7 @@ namespace GestaoEstoque.WebApi.Service
 
         }
 
-        public Usuario UsuarioValido(int id, string senha)
+        public IEnumerable<Usuario> UsuarioValido(int id, string senha)
         {
           return  _usuarioRepository.UsuarioValido(id, senha);
         }

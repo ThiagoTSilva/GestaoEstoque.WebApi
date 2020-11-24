@@ -8,6 +8,6 @@ namespace GestaoEstoque.WebApi.Repositories.Interface
 {
     public interface IUsuarioRepository : IBaseRepository<Usuario>, IDisposable
     {
-        Usuario UsuarioValido(int id, string senha);
+        IEnumerable<Usuario> UsuarioValido(int id, string senha);
     }
 }

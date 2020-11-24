@@ -16,12 +16,35 @@ namespace GestaoEstoque.WebApi.Service
             _estoqueRepository = estoqueRepository;
         }
 
-        public IEnumerable<Task<Agenda>> AgendarHorario(Agenda agenda)
+        public IEnumerable<Agenda> AgendarHorario(Agenda agenda)
         {
 
             _estoqueRepository.Save(agenda);
 
-            return (IEnumerable<Task<Agenda>>)agenda;
+            return agenda;
+        }
+
+        private List<Validacao> ValidarAgendamento(Agenda agenda)
+        { 
+            var validarDetalhe = new List<Validacao>();
+
+            var vagas = _estoqueRepository.VerificarVaga(agenda.DtInicio, agenda.DtFinal, agenda.HrInicial, agenda.HrFinal);
+
+            foreach (var vaga in vagas) 
+            {
+                if (vaga.Vaga == agenda.Vaga) 
+                {
+                    var validar = new Validacao
+                    {
+                        Sucesso = false,
+                        Mensagem = "Vaga já esta ocupada."
+                    };
+
+                    validarDetalhe.Add(validar);
+                }
+
+            }
+            return validarDetalhe;
         }
     }
 }

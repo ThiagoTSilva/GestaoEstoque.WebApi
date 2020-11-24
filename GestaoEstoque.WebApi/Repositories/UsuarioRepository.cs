@@ -16,12 +16,13 @@ namespace GestaoEstoque.WebApi.Repositories
             _context = context;
         }
 
-        public Usuario UsuarioValido(int id, string senha)
+        public IEnumerable<Usuario> UsuarioValido(int id, string senha)
         {
-            IQueryable<Usuario> query = _context.Usuarios;
-            query = query.Where(u => u.Senha == senha && u.Id == id);
+            var usuario = from u in _context.Usuarios
+                          where u.Senha == senha && u.Id == id
+                          select u;
 
-            return (Usuario)query;
+            return usuario;
         }
     }
 }
