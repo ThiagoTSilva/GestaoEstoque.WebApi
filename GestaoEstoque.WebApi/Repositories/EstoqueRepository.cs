@@ -26,5 +26,28 @@ namespace GestaoEstoque.WebApi.Repositories
                                 
             return vaga;
         }
+
+        public IEnumerable<Agenda> VerificarVagaFornecedor(string nomeFornecedor, string dataInicio, string dataFim, string hrInicio, string hrFim)
+        {
+            var vaga = from a in _context.Agendas
+                       where a.DtInicio == dataInicio
+                            && a.DtFinal == dataFim
+                            && a.HrInicial == hrInicio
+                            && a.HrFinal == hrFim
+                            && a.Fornecedor.Nome == nomeFornecedor
+                       select a;
+
+            return vaga;
+        }
+
+        public IEnumerable<Agenda> Lotacao(string dataInicio, string dataFim)
+        {
+            var lotacao = from a in _context.Agendas
+                       where a.DtInicio == dataInicio
+                            && a.DtFinal == dataFim
+                       select a;
+
+            return lotacao;
+        }
     }
 }

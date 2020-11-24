@@ -8,6 +8,7 @@ namespace GestaoEstoque.WebApi.Repositories.Interface
 {
     public interface IEstoqueRepository : IBaseRepository<Agenda>, IDisposable
     {
-        IEnumerable<Agenda> VerificarVaga(string dataInicio, string dataFim, string dhInicio, string HrFim);
+        IEnumerable<Agenda> VerificarVaga(string dataInicio, string dataFim, string hrInicio, string hrFim);
+        IEnumerable<Agenda> VerificarVagaFornecedor(string nomeFornecedor, string dataInicio, string dataFim, string hrInicio, string hrFim);
     }
 }

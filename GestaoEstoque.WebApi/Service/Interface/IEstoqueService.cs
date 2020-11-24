@@ -1,4 +1,5 @@
 ﻿using GestaoEstoque.WebApi.Models;
+using GestaoEstoque.WebApi.Models.Dto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,6 @@ namespace GestaoEstoque.WebApi.Service.Interface
 {
     public interface IEstoqueService
     {
-        IEnumerable<Agenda> AgendarHorario(Agenda agenda);
+        AgendamentoDto AgendarHorario(Agenda agenda);
     }
 }
