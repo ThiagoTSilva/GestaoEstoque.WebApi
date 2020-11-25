@@ -9,6 +9,6 @@ namespace GestaoEstoque.WebApi.Service.Interface
     public interface IUsuarioService
     {
         void CadastrarUsuario(Usuario usuario);
-        IEnumerable<Usuario> UsuarioValido(int id, string senha);
+        List<Usuario> UsuarioValido(int id, string senha);
     }
 }

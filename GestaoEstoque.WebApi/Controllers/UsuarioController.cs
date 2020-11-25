@@ -1,6 +1,7 @@
 ﻿using GestaoEstoque.WebApi.Models;
 using GestaoEstoque.WebApi.Service.Interface;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace GestaoEstoque.WebApi.Controllers
 {
@@ -23,9 +24,16 @@ namespace GestaoEstoque.WebApi.Controllers
         }
 
         [HttpGet("~/api/usuario/{id}/{senha}")]
-        public IActionResult UsuarioValido(int id, string senha) 
+        public async Task<IActionResult> UsuarioValido(int id, string senha) 
         {
-            return Ok(_service.UsuarioValido(id, senha));
+            var usuario = _service.UsuarioValido(id, senha);
+            
+            if(usuario.Count == 0) 
+                return NoContent();
+
+            return Ok(usuario);
+
+
         }
     }
 }

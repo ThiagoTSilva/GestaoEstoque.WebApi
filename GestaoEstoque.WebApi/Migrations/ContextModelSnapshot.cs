@@ -47,12 +47,17 @@ namespace GestaoEstoque.WebApi.Migrations
                     b.Property<string>("Status")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("UsuarioId")
+                        .HasColumnType("int");
+
                     b.Property<int>("Vaga")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("FornecedorId");
+
+                    b.HasIndex("UsuarioId");
 
                     b.ToTable("Agenda");
                 });
@@ -105,7 +110,13 @@ namespace GestaoEstoque.WebApi.Migrations
                         .WithMany()
                         .HasForeignKey("FornecedorId");
 
+                    b.HasOne("GestaoEstoque.WebApi.Models.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId");
+
                     b.Navigation("Fornecedor");
+
+                    b.Navigation("Usuario");
                 });
 #pragma warning restore 612, 618
         }

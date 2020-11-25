@@ -10,7 +10,7 @@
         public string HrFinal { get; set; }
         public string Placa { get; set; }
         public int Vaga { get; set; }
-        public int usuario { get; set; }
+        public Usuario Usuario { get; set; }
         public Fornecedor Fornecedor { get; set; }
     }
 }

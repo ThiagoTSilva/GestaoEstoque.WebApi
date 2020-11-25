@@ -7,7 +7,7 @@ namespace GestaoEstoque.WebApi.Models
 {
     public class Usuario
     {
-        Usuario() 
+        public Usuario() 
         {
             DhCadastro = DateTime.Now;
             DhAtualizacao = DateTime.Now;
