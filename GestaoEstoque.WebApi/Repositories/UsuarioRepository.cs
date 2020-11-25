@@ -3,15 +3,13 @@ using GestaoEstoque.WebApi.Models;
 using GestaoEstoque.WebApi.Repositories.Interface;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace GestaoEstoque.WebApi.Repositories
 {
     public class UsuarioRepository : BaseRepository<Usuario>, IUsuarioRepository
     {
         private Context _context;
-        public UsuarioRepository(Context context)
-         : base(context)
+        public UsuarioRepository(Context context) : base(context)
         {
             _context = context;
         }

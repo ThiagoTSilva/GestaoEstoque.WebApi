@@ -10,5 +10,6 @@ namespace GestaoEstoque.WebApi.Repositories.Interface
     {
         IEnumerable<Agenda> VerificarVaga(string dataInicio, string dataFim, string hrInicio, string hrFim);
         IEnumerable<Agenda> VerificarVagaFornecedor(string nomeFornecedor, string dataInicio, string dataFim, string hrInicio, string hrFim);
+        IEnumerable<Agenda> Lotacao(string dataInicio, string dataFim);
     }
 }
